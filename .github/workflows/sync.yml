@@ -1,0 +1,21 @@
+name: Sync to Gitee
+
+on:
+  push:
+    branches: [ "**" ]  # 所有分支提交都同步
+  workflow_dispatch:    # 可手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@v1
+        with:
+          source-repo: "https://github.com/lianglove7/incubator-seata.git"
+          destination-repo: "https://${{ secrets.GITEE_TOKEN }}@gitee.com/hangzhou-hongxiong-intelligent_1/sample_repository.git"
