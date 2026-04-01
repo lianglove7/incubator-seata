@@ -17,7 +17,7 @@
 <div style="align: center">
 <img src="https://img.alicdn.com/imgextra/i1/O1CN011z0JfQ2723QgDiWuH_!!6000000007738-2-tps-1497-401.png"  height="100" width="426"/>
 </div>
-# 测试
+
 # Seata: Simple Extensible Autonomous Transaction Architecture
 
 [![build](https://github.com/apache/incubator-seata/actions/workflows/build.yml/badge.svg)](https://github.com/apache/incubator-seata/actions/workflows/build.yml)
