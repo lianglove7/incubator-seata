@@ -3,17 +3,18 @@ name: Sync to Gitee
 on:
   push:
     branches: [ "**" ]  # 所有分支提交都同步
-  workflow_dispatch:    # 可手动触发
+  workflow_dispatch:    # 支持手动触发
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code (full history)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          
+          fetch-depth: 0  # 必须拉取完整历史，否则同步不完整
+          submodules: recursive  # 仓库有子模块必须加，没有可删除
+
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@v1
         with:
